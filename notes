@@ -1,0 +1,11 @@
+Optimization:
+can change to not check if element is in time range when being added, as this is not needed
+
+Versions:
+ -----  Octree  -----
+ -----  Quadtree list with quadtrees in array  -----
+ The QuadtreeArray class holds an indexed dictionary of the quadtrees using times as keys, the indexing is ordered in
+ reverse oreder of times as it is more likely that times will move forwards than backwards. When agents are added
+ references are stored in the quadtrees. Agents themselves also hold references to the quadtrees, for each position in
+ the agents path as designated by the input.
+ -----  Quadtree list with quadtrees in deque  -----
