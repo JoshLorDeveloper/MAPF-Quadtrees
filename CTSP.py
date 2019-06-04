@@ -6,6 +6,8 @@ from range import Range
 import Visualization.main
 
 
+# MAIN FILE. RUN PROJECT FROM THIS FILE.
+
 class CTSP:
 
     # initialize CTSP with range of space
