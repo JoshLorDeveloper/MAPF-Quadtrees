@@ -2,7 +2,7 @@ from classes.CTSP import CTSP
 from classes.simple_objects.range import Range
 from classes.simple_objects.position import Position
 from classes.simple_objects.shape import Shape
-import visualization.main
+import visualization.animate_2d
 
 side_distance = 5
 # array of positions of vertices for shape in order of x0, y0, x1, y1... where 0,0 is the center of the shape
@@ -38,4 +38,4 @@ model.add_agent_from_positions(positions, Shape(shape_vertices))
 # model.print_modal()
 
 # visualize model
-visualization.main.run_model(model, show_start=True, show_destination=True)
+visualization.animate_2d.run_model(model, show_start=True, show_destination=True)

@@ -1,5 +1,5 @@
-from agent import Agent
-from position import Position
+from classes.agent_source.agent import Agent
+from classes.simple_objects.position import Position
 
 from tkinter import *
 import time
