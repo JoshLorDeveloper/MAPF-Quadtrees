@@ -1,4 +1,4 @@
-from classes.functionless.vector import Vector
+from classes.simple_objects.vector import Vector
 
 
 class Force:

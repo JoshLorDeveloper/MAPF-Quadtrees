@@ -1,5 +1,5 @@
-from classes.agent import Agent
-from classes.range import Range
+from classes.agent_source.agent import Agent
+from classes.simple_objects.range import Range
 
 
 class QuadTreeNode:

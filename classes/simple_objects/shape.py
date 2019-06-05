@@ -1,5 +1,5 @@
-from classes.functionless.position import Position
-from classes.range import Range
+from classes.simple_objects.position import Position
+from classes.simple_objects.range import Range
 
 
 class Shape:

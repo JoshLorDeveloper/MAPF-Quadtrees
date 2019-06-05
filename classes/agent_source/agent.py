@@ -1,7 +1,7 @@
-from classes.functionless.position import Position
-from classes.range import Range
-from classes.shape import Shape
-from classes.indexed_dictionaries import PositionIndexedDictionary
+from classes.simple_objects.position import Position
+from classes.simple_objects.range import Range
+from classes.simple_objects.shape import Shape
+from classes.agent_source.position_indexed_dictionary import PositionIndexedDictionary
 from utilities import range_binary_search
 
 

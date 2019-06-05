@@ -1,7 +1,7 @@
 from classes.CTSP import CTSP
-from classes.range import Range
-from classes.functionless.position import Position
-from classes.shape import Shape
+from classes.simple_objects.range import Range
+from classes.simple_objects.position import Position
+from classes.simple_objects.shape import Shape
 import visualization.main
 
 side_distance = 5

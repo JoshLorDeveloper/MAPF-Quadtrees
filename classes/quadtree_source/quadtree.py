@@ -1,7 +1,7 @@
-from classes.quadtree_node import QuadTreeNode
-from classes.agent import Agent
-from classes.range import Range
-from classes.indexed_dictionaries import TimeSortedDictionary
+from classes.quadtree_source.quadtree_node import QuadTreeNode
+from classes.agent_source.agent import Agent
+from classes.simple_objects.range import Range
+from classes.quadtree_source.time_sorted_dictionary import TimeSortedDictionary
 from utilities import range_binary_search
 
 
