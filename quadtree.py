@@ -2,7 +2,7 @@ from quadtree_node import QuadTreeNode
 from agent import Agent
 from range import Range
 from indexed_dictionary import TimeSortedDictionary
-import range_binary_search
+from utilities import range_binary_search
 
 
 class QuadtreeArray:

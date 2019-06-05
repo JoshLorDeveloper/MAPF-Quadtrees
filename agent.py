@@ -2,7 +2,7 @@ from position import Position
 from range import Range
 from shape import Shape
 from indexed_dictionary import PositionIndexedDictionary
-import range_binary_search
+from utilities import range_binary_search
 
 
 # function to define key for sorting of positions
