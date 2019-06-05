@@ -83,6 +83,7 @@ class TimeSortedDictionary:
                 # remember that ordered times are backwards if not deque
                 # and hence must remove from opposite size as is natural
 
+                # calculate the time that should be removed
                 temp_time = old_start_time + index * self.time_step
 
                 # ensure that time to be removed is contained in ordered times
@@ -137,6 +138,8 @@ class TimeSortedDictionary:
             for index in range(0, round((old_end_time - self.end_time)/self.time_step) + 1):
                 # remember that ordered times are backwards if not deque
                 # and hence must remove from opposite size as is natural
+
+                # calculate the time that should be removed
                 temp_time = old_end_time - index * self.time_step
 
                 # ensure that time to be removed is contained in ordered times
@@ -152,7 +155,10 @@ class TimeSortedDictionary:
             for index in range(0, round((self.end_time - old_end_time)/self.time_step)):
                 # remember that ordered times are backwards if not deque
                 # and hence must add from opposite size as is natural
+
+                # calculate the time that should be added
                 temp_time = old_end_time + index * self.time_step
+
                 # ensure that time has not already been added to model
                 if temp_time not in self.ordered_times:
                     if self.should_use_deque:
