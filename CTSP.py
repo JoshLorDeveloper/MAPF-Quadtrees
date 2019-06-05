@@ -64,7 +64,7 @@ for i in range(10, 70 + 1):
 model.add_agent_from_positions(positions, Shape(shape_vertices))
 
 # print out basic model information
-model.print_modal()
+# model.print_modal()
 
 # visualize model
 Visualization.main.run_model(model, show_start=True, show_destination=True)
