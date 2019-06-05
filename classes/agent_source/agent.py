@@ -9,6 +9,7 @@ from utilities import range_binary_search
 def positions_time(val):
     return val.get_time()
 
+
 # sort positions in ascending order by time
 def sort_positions(positions: [Position]):
     positions.sort(key=positions_time)
