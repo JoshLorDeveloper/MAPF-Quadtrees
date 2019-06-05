@@ -85,8 +85,6 @@ def run_model(model, show_start=False, show_destination=False):
 
                     canvas.create_polygon(shape_ending_list, fill="green")
 
-                    print("x: " + str(agent.target_position.get_x()) + " y: " + str(agent.target_position.get_y()))
-
                 # add polygon for the start of the agent's regular path to screen
                 polygon = canvas.create_polygon(shape_starting_list, fill="blue")
 

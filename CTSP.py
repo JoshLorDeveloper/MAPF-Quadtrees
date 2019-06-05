@@ -49,12 +49,12 @@ model = CTSP(Range(0, 400), Range(0, 400))
 
 # initialize arrays of positions for different agents
 positions = []
-for i in range(60, 20 + 1, -1):
+for i in range(60, 20 - 1, -1):
     positions.append(Position(i + 300, i + 200, 80 - i))
 model.add_agent_from_positions(positions, Shape(shape_vertices))
 
 positions = []
-for i in range(30, 50 + 1):
+for i in range(30, 61):
     positions.append(Position(i, i, i))
 model.add_agent_from_positions(positions, Shape(shape_vertices))
 
@@ -64,7 +64,7 @@ for i in range(10, 70 + 1):
 model.add_agent_from_positions(positions, Shape(shape_vertices))
 
 # print out model information
-# model.print_modal()
+model.print_modal()
 
 # visualize model
 Visualization.main.run_model(model, show_start=True, show_destination=True)

@@ -32,6 +32,7 @@ class QuadtreeArray:
         # get index range of times in which agent should be added to
         index_range = range_binary_search.recursive_search(0, len(ordered_times) - 1, agent.time_range,
                                                            ordered_times)
+        print(index_range.up_bound)
         # add agent to quadtrees in index range
         for index in range(index_range.low_bound, index_range.up_bound + 1):
             self.quad_trees.dict_index(index).add_agent(agent)
