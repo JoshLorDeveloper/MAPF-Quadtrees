@@ -1,8 +1,8 @@
-from quadtree import QuadtreeArray
-from position import Position
-from shape import Shape
-from agent import Agent
-from range import Range
+from classes.quadtree import QuadtreeArray
+from classes.functionless.position import Position
+from classes.shape import Shape
+from classes.agent import Agent
+from classes.range import Range
 
 
 # MAIN FILE. RUN PROJECT FROM THIS FILE.

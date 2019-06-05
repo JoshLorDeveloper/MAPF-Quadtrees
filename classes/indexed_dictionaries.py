@@ -1,4 +1,4 @@
-from position import Position
+from classes.functionless.position import Position
 from collections import deque
 
 

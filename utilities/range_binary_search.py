@@ -1,5 +1,5 @@
-from range import Range
-from position import Position
+from classes.range import Range
+from classes.functionless.position import Position
 
 
 # Use principles of binary search to find upper and lower indexes of search time range
