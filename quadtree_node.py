@@ -66,9 +66,9 @@ class QuadTreeNode:
     def contains_agent(self, agent: Agent):
         # if increased efficiency is needed can be adapted to not check if time range is correct, although will cause
         # problems with quadtree parents not being added
-        if agent.is_in(self):
+        #if agent.is_in(self):
             return True
-        return False
+        #return False
 
     def split(self):
         # split 2d area into four equal 2d spaces

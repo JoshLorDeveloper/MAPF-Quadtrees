@@ -54,7 +54,7 @@ for i in range(60, 20 - 1, -1):
 model.add_agent_from_positions(positions, Shape(shape_vertices))
 
 positions = []
-for i in range(30, 61):
+for i in range(30, 60):
     positions.append(Position(i, i, i))
 model.add_agent_from_positions(positions, Shape(shape_vertices))
 
@@ -63,8 +63,8 @@ for i in range(10, 70 + 1):
     positions.append(Position(i, i + 100, i))
 model.add_agent_from_positions(positions, Shape(shape_vertices))
 
-# print out model information
-model.print_modal()
+# print out basic model information
+# model.print_modal()
 
 # visualize model
 Visualization.main.run_model(model, show_start=True, show_destination=True)

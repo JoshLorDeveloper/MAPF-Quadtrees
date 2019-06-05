@@ -82,13 +82,13 @@ def high_bound(low, high, range_up_bound, sorted_array):
             return mid_point - 1
     if range_up_bound == temp_val:
         # if upbound is the exact current midpoint then return current midpoint
-        return mid_point
+        return mid_point - 1
     elif range_up_bound > temp_val:
         # if range upbound is above the current midpoint look in range above the current midpoint for upbound
-        return low_bound(mid_point + 1, high, range_up_bound, sorted_array)
+        return high_bound(mid_point + 1, high, range_up_bound, sorted_array)
     elif range_up_bound < temp_val:
         # if range upbound is below the current midpoint look in range below the current midpoint for upbound
-        return low_bound(low, mid_point - 1, range_up_bound, sorted_array)
+        return high_bound(low, mid_point - 1, range_up_bound, sorted_array)
 
 
 def get_value(index, sorted_array):

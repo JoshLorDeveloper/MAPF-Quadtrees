@@ -48,11 +48,12 @@ class TimeSortedDictionary:
         if self.start_time == -1 and self.end_time == -1:
             self.start_time = new_start_time
             self.end_time = new_start_time
-            if self.should_use_deque:
-                self.ordered_times.appendleft(new_start_time)
-            else:
-                self.ordered_times.append(new_start_time)
-            self.dict[new_start_time] = new_quad_tree_node(new_start_time)
+            # NOT NEEDED CREATES AN EXTRA NODE AT THIS NEW START TIME
+            # if self.should_use_deque:
+            #     self.ordered_times.appendleft(new_start_time)
+            # else:
+            #     self.ordered_times.append(new_start_time)
+            # self.dict[new_start_time] = new_quad_tree_node(new_start_time)
             return
 
         # store start time to calculate time changes
@@ -81,11 +82,16 @@ class TimeSortedDictionary:
             for index in range(0, round((self.start_time - old_start_time)/self.time_step)):
                 # remember that ordered times are backwards if not deque
                 # and hence must remove from opposite size as is natural
-                if self.should_use_deque:
-                    self.ordered_times.popleft()
-                else:
-                    self.ordered_times.pop()
-                self.dict.pop(old_start_time + index * self.time_step, None)
+
+                temp_time = old_start_time + index * self.time_step
+
+                # ensure that time to be removed is contained in ordered times
+                if temp_time in self.ordered_times:
+                    if self.should_use_deque:
+                        self.ordered_times.popleft()
+                    else:
+                        self.ordered_times.pop()
+                    self.dict.pop(temp_time, None)
         else:
             # if start time decreased then we must add needed quadtrees
             for index in range(1, round((old_start_time - self.start_time)/self.time_step) + 1):
@@ -94,12 +100,15 @@ class TimeSortedDictionary:
 
                 # calculate the time that should be added
                 temp_time = old_start_time - index * self.time_step
-                if self.should_use_deque:
-                    self.ordered_times.appendleft(temp_time)
-                else:
-                    self.ordered_times.append(temp_time)
-                # set dictionary time as well to maintain dictionary
-                self.dict[temp_time] = new_quad_tree_node(temp_time)
+
+                # ensure that time has not already been added to model
+                if temp_time not in self.ordered_times:
+                    if self.should_use_deque:
+                        self.ordered_times.appendleft(temp_time)
+                    else:
+                        self.ordered_times.append(temp_time)
+                    # set dictionary time as well to maintain dictionary
+                    self.dict[temp_time] = new_quad_tree_node(temp_time)
 
     # change end time of model creating quadtree nodes if it is after current end, and deleting quadtree nodes if
     # it is before current end
@@ -124,26 +133,34 @@ class TimeSortedDictionary:
 
         # if end time time has decreased then we must remove unnecessary quadtrees
         if self.end_time < old_end_time:
+            # loop through times that are needed to have a quadtree removed
             for index in range(0, round((old_end_time - self.end_time)/self.time_step) + 1):
                 # remember that ordered times are backwards if not deque
                 # and hence must remove from opposite size as is natural
-                if self.should_use_deque:
-                    self.ordered_times.pop()
-                else:
-                    self.ordered_times.pop(0)
-                self.dict.pop(old_end_time - index * self.time_step, None)
+                temp_time = old_end_time - index * self.time_step
+
+                # ensure that time to be removed is contained in ordered times
+                if temp_time in self.ordered_times:
+                    if self.should_use_deque:
+                        self.ordered_times.pop()
+                    else:
+                        self.ordered_times.pop(0)
+                    self.dict.pop(temp_time, None)
         else:
             # if end time increased then we must add needed quadtrees
-            for index in range(1, round((self.end_time - old_end_time)/self.time_step)):
+            # loop through times that are needed to have a quadtree added
+            for index in range(0, round((self.end_time - old_end_time)/self.time_step)):
                 # remember that ordered times are backwards if not deque
                 # and hence must add from opposite size as is natural
                 temp_time = old_end_time + index * self.time_step
-                if self.should_use_deque:
-                    self.ordered_times.append(temp_time)
-                else:
-                    self.ordered_times.insert(0, temp_time)
-                # set dictionary time as well to maintain dictionary
-                self.dict[temp_time] = new_quad_tree_node(temp_time)
+                # ensure that time has not already been added to model
+                if temp_time not in self.ordered_times:
+                    if self.should_use_deque:
+                        self.ordered_times.append(temp_time)
+                    else:
+                        self.ordered_times.insert(0, temp_time)
+                    # set dictionary time as well to maintain dictionary
+                    self.dict[temp_time] = new_quad_tree_node(temp_time)
 
 
 class PositionIndexedDictionary:
