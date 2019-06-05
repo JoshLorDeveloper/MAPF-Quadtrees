@@ -15,7 +15,7 @@ class Range:
         return False
 
     def difference(self, num):
-        # check if number is contained in the range, beyond range up bound or range low bound
+        # check if number is contained in the range, above range up bound or below range low bound
         if self.low_bound <= num <= self.up_bound:
             return 0
         elif num > self.up_bound:
