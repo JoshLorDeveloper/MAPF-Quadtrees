@@ -22,8 +22,8 @@ class CTSP:
         self.quadtree.add_agent(agent)
 
     # create new agent from position array and shape
-    def add_agent_from_positions(self, positions: [Position], shape: Shape):
-        agent = Agent(positions, shape)
+    def add_agent_from_positions(self, positions_parameter: [Position], shape: Shape):
+        agent = Agent(positions_parameter, shape)
         self.add_agent(agent)
 
     def get_agents(self):
