@@ -28,7 +28,7 @@ def three_dimensional_collision(range_x: Range, range_y: Range, range_time: Rang
 class Agent:
 
     # define agent pased on array of positiosn and shape
-    def __init__(self, positions: [Position], shape: Shape):
+    def __init__(self, positions: [Position], shape: Shape, is_restricted_area=False):
         # sort positions into ascending time order, note: this may not be needed if parameter already passes sorted list
         sorted_positions = sort_positions(positions)
 
@@ -45,6 +45,9 @@ class Agent:
         # of quadtree_node parents for that agent in the time range between the key position and the next position. It
         # is important to note that the sorted array used for indexing stores position objects not position's time's.
         self.position_indexed_dictionary = PositionIndexedDictionary(sorted_positions)
+
+        # define if this agent can be controlled by the algorithm
+        self.is_restricted_area = is_restricted_area
 
     # returns array of sorted position from position indexed dictionary
     def get_positions(self):
