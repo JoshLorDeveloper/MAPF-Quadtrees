@@ -16,7 +16,7 @@ shape_vertices = [-1 * side_distance,
                   side_distance]
 
 # initialize model
-model = CTSP(Range(0, 400), Range(0, 400))
+model = CTSP(Range(0, 400), Range(0, 400), 0.5)
 
 # initialize arrays of positions for different agents
 positions = []
