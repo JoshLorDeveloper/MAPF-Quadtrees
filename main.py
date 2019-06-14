@@ -2,6 +2,7 @@ from classes.CTSP import CTSP
 from classes.simple_objects.range import Range
 from classes.simple_objects.position import Position
 from classes.simple_objects.shape import Shape
+from setup.environment_setup import Environment
 import visualization.animate_2d
 
 side_distance = 5
@@ -15,8 +16,10 @@ shape_vertices = [-1 * side_distance,
                   -1 * side_distance,
                   side_distance]
 
+temp_environment = Environment(Range(0, 400), Range(0, 400), 0.5)
+
 # initialize model
-model = CTSP(Range(0, 400), Range(0, 400), 0.5)
+model = CTSP(temp_environment)
 
 # initialize arrays of positions for different agents
 positions = []

@@ -3,6 +3,7 @@ from classes.simple_objects.position import Position
 from classes.simple_objects.shape import Shape
 from classes.agent_source.agent import Agent
 from classes.simple_objects.range import Range
+from setup.environment_setup import Environment
 
 
 # MAIN FILE. RUN PROJECT FROM THIS FILE.
@@ -10,12 +11,13 @@ from classes.simple_objects.range import Range
 class CTSP:
 
     # initialize CTSP with range of space
-    def __init__(self, range_x: Range, range_y: Range, time_step=0.5, agent_initializers=[]):
-        self.range_x = range_x
-        self.range_y = range_y
-        self.quadtree = QuadtreeArray(range_x, range_y, time_step)
+    def __init__(self, environment: Environment):
+        self.range_x = environment.range_x
+        self.range_y = environment.range_y
+        self.time_step = environment.time_step
+        self.quadtree = QuadtreeArray(self.range_x, self.range_y, self.time_step)
+        # CHANGE WHEN FINISHED WITH ENVIRONMENT POSITION AGENT CREATION
         self.agents = []
-        self.time_step = time_step
 
     def add_agent(self, agent: Agent):
         self.agents.append(agent)
