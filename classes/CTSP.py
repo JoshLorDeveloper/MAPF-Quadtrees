@@ -17,7 +17,8 @@ class CTSP:
         self.range_y = environment.range_y
         self.time_step = environment.time_step
         self.quadtree = QuadtreeArray(self.range_x, self.range_y, self.time_step)
-        # CHANGE WHEN FINISHED WITH ENVIRONMENT POSITION AGENT CREATION
+
+        # CHANGE WHEN FINISHED WITH ENVIRONMENT AGENT POSITION CREATION
         self.agents = []
 
     def add_agent(self, agent: Agent):
