@@ -24,9 +24,18 @@ class AgentInitializer:
 # class for defining creation of enviroment that agents will operate in
 class Environment:
 
-    def __init__(self, range_x: Range, range_y: Range, obstacle_initializers: [ObstacleInitializer], agent_initializers: [AgentInitializer]):
+    def __init__(self, range_x: Range, range_y: Range, time_step, obstacle_initializers: [ObstacleInitializer] = None,
+                 agent_initializers: [AgentInitializer] = None):
         self.range_x = range_x
         self.range_y = range_y
-        self.obstacle_initializers = obstacle_initializers
-        self.agent_initializers = agent_initializers
+        self.time_step = time_step
+        if obstacle_initializers is None:
+            self.obstacle_initializers = []
+        else:
+            self.obstacle_initializers = obstacle_initializers
+
+        if agent_initializers is None:
+            self.agent_initializers = []
+        else:
+            self.agent_initializers = agent_initializers
 

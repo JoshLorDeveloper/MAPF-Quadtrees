@@ -10,7 +10,7 @@ from classes.simple_objects.range import Range
 class CTSP:
 
     # initialize CTSP with range of space
-    def __init__(self, range_x: Range, range_y: Range, time_step=0.5, agent_initializers=[], ):
+    def __init__(self, range_x: Range, range_y: Range, time_step=0.5, agent_initializers=[]):
         self.range_x = range_x
         self.range_y = range_y
         self.quadtree = QuadtreeArray(range_x, range_y, time_step)
