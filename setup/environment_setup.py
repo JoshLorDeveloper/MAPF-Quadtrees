@@ -16,3 +16,11 @@ class Environment:
         self.range_x = range_x
         self.range_y = range_y
         self.obstacles = obstacles
+
+
+class AgentInitializer:
+
+    def __init__ (self, start_position:Position, end_position:Position, shape:Shape):
+        self.start_position = start_position
+        self.end_position = end_position
+        self.shape = shape
