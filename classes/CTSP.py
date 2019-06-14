@@ -8,6 +8,7 @@ from setup.environment_setup import Environment
 
 # MAIN FILE. RUN PROJECT FROM THIS FILE.
 
+# CONTINUOUS TIME SPACIAL PATH FINDING
 class CTSP:
 
     # initialize CTSP with range of space
