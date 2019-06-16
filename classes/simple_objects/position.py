@@ -5,6 +5,7 @@ class Position:
     def __init__(self, x, y, time):
         self.x = x
         self.y = y
+        # if time is defined as -1 then time has not yet been set
         self.time = time
 
     # use getter and setter methods to prevent error later in development
