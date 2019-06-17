@@ -4,6 +4,7 @@ from classes.simple_objects.shape import Shape
 from classes.agent_source.agent import Agent
 import math
 
+
 # class for defining creation of obstacles or restricted areas
 class ObstacleInitializer:
 
@@ -43,6 +44,14 @@ class Environment:
             self.agent_initializers = []
         else:
             self.agent_initializers = agent_initializers
+
+    def get_obstacles(self):
+        obstacles = []
+        for obstacle_initializer in self.obstacle_initializers:
+            obstacle_position = obstacle_initializer.get_position()
+            obstacle_position.set_time(-1)
+            temp_obstacle = Agent(obstacle_position, obstacle_initializer.shape, is_restricted_area=True)
+            obstacles.append(temp_obstacle)
 
     # get array of agents from agent initializers
     def get_agents(self):
