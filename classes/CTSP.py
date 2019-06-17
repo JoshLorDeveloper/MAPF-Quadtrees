@@ -19,11 +19,17 @@ class CTSP:
         self.quadtree = QuadtreeArray(self.range_x, self.range_y, self.time_step)
 
         # CHANGE WHEN FINISHED WITH ENVIRONMENT AGENT POSITION CREATION
-        self.agents = []
+        self.agents=[]
+        self.add_agents(environment.get_obstacles())
+        self.add_agents(environment.get_agents())
 
     def add_agent(self, agent: Agent):
         self.agents.append(agent)
         self.quadtree.add_agent(agent)
+
+    def add_agents(self, agents: [Agent]):
+        self.agents.extend(agents)
+        self.quadtree.add_agents(agents)
 
     # create new agent from position array and shape
     def add_agent_from_positions(self, positions_parameter: [Position], shape: Shape):
