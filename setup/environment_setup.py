@@ -52,6 +52,7 @@ class Environment:
             obstacle_position.set_time(-1)
             temp_obstacle = Agent(obstacle_position, obstacle_initializer.shape, is_restricted_area=True)
             obstacles.append(temp_obstacle)
+        return obstacles
 
     # get array of agents from agent initializers
     def get_agents(self):
@@ -60,7 +61,6 @@ class Environment:
             agent_positions = self.get_agent_default_positions(agent_initializer)
             temp_agent = Agent(agent_positions, agent_initializer.shape, is_restricted_area=False)
             agents.append(temp_agent)
-
         return agents
 
     # get positions in optimal path for agent defined by agent max speed
