@@ -1,7 +1,7 @@
 from classes.agent_source.agent import Agent
 from classes.simple_objects.range import Range
 
-
+# Think about using R-tree
 class QuadTreeNode:
 
     THRESHOLD = 5

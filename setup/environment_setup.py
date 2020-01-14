@@ -25,7 +25,7 @@ class AgentInitializer:
         self.max_speed = max_speed
 
 
-# class for defining creation of enviroment that agents will operate in
+# class for defining creation of environment that agents will operate in
 class Environment:
 
     def __init__(self, range_x: Range, range_y: Range, time_step, start_time = 0, obstacle_initializers: [ObstacleInitializer] = None,

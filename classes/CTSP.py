@@ -6,8 +6,6 @@ from classes.simple_objects.range import Range
 from setup.environment_setup import Environment
 
 
-# MAIN FILE. RUN PROJECT FROM THIS FILE.
-
 # CONTINUOUS TIME SPACIAL PATH FINDING
 class CTSP:
 
